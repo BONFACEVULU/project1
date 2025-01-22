@@ -28,8 +28,8 @@ class ResetPassword extends dbconnection {
           
     //Recipients
     $mail->setFrom('APIapp@gmail.com', 'Mailer');
-    $mail->addAddress('bonywhisky9@gmail.com', 'bonface vulu'); 
-            //Content
+    $mail->addAddress($email); // Use the provided email address
+    //Content
             $mail->isHTML(true);
             $mail->Subject = 'Password Reset';
             $mail->Body    = "Click the following link to reset your password: <a href='$resetLink'>$resetLink</a>";
@@ -59,8 +59,8 @@ class ResetPassword extends dbconnection {
             echo "Your password has been reset.";
         } else {
             echo "Invalid token.";
-        }
-    }
+           }
+       }
 }
 
 $resetPassword = new ResetPassword();
