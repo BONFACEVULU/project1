@@ -17,11 +17,11 @@ class Signup {
             $user = new User();
 
             // Call the register method
-            if ($user->register($data)) {
+            if ($user->register($data)){
                 // Redirect to the home page (index.php) after successful registration
                 header("Location: index.php");
                 exit(); 
-            } else {
+            }else{
                 echo '<div class="alert alert-danger">Something went wrong</div>';
             }
         }

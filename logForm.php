@@ -96,6 +96,7 @@
                 </div>
                 <div class="mt-3 text-center">
                     <p>Don't have an account? <a href="usersignup.php">Sign up</a></p>
+                    <p><a href="resetpassword.php">Forgot Password?</a></p>
                 </div>
             </form>
         </div>
@@ -117,4 +118,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
