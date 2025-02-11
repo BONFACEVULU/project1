@@ -1,0 +1,10 @@
+{
+    "name": "bonfacevulu/project-bolt",
+    "description": "Dance system for managing classes",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
