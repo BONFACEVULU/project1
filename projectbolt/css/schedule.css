@@ -1,0 +1,59 @@
+/* Styles for schedule.php */
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* List group item styles */
+.list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px);
+}
+
+.list-group-item .badge {
+    font-size: 1.25rem;
+    padding: 10px 15px;
+}
+
+.list-group-item h5 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.list-group-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.list-group-item .rounded-circle {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.list-group-item .badge.bg-secondary {
+    background-color: #6c757d;
+}
+
+.list-group-item .border-secondary {
+    border-color: #6c757d !important;
+}

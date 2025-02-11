@@ -1,0 +1,231 @@
+/* General Styles */
+:root {
+  --primary-color: #ff4081;
+  --secondary-color: #3f51b5;
+  --dark-color: #333;
+  --light-color: #f8f9fa;
+  --header-bg: #000;
+  --text-color: #fff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Navigation */
+.navbar-custom {
+  background-color: var(--header-bg);
+  padding: 1rem 0;
+}
+
+.navbar-custom .navbar-brand {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.navbar-custom .nav-link {
+  color: var(--text-color) !important;
+  margin: 0 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1547153760-18fc86324498?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFuY2V8ZW58MHx8MHx8fDA%3D') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+/* Features Section */
+.feature-box {
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  background-color: var(--light-color);
+  border: 1px solid var(--primary-color);
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Classes Section */
+.class-card {
+  transition: transform 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+}
+
+.class-card img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('https://images.pexels.com/photos/1918445/pexels-photo-1918445.jpeg?cs=srgb&dl=pexels-wjretratos-1918445.jpg&fm=jpg') center/cover no-repeat;
+  padding: 5rem 0;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--header-bg);
+}
+
+.footer a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons {
+  font-size: 1.5rem;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons svg:hover {
+  color: var(--primary-color);
+}
+
+/* Animations */
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+/* Calendar Header */
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--header-bg);
+  padding: 1rem;
+}
+
+.calendar-header .badge {
+  background-color: var(--dark-color);
+  color: var(--text-color);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.calendar-header .badge.active {
+  background-color: var(--primary-color);
+}
+
+/* Pop-up Modal */
+.modal-content {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+/* Instructor Card */
+.instructor-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.instructor-card:hover {
+  transform: translateY(-5px);
+}
+
+.instructor-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.instructor-card:hover img {
+  transform: scale(1.1);
+}
+
+.instructor-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instructor-card:hover .overlay {
+  opacity: 1;
+}
+
+.instructor-card .overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--text-color);
+}
+
+.instructor-card .overlay-content h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.instructor-card .overlay-content p {
+  margin-bottom: 1rem;
+}
+
+.instructor-card .overlay-content a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
