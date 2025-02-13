@@ -225,12 +225,24 @@ if ($action == 'edit' && $type == 'instructor') {
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Instructor Image</label>
-                            <input type="file" name="instructor_image" class="form-control" accept="image/*" <?php echo $action == 'add' ? 'required' : ''; ?>>
+                            <input type="file" name="instructor_image" class="form-control" accept="image/*" id="instructorImageInput" <?php echo $action == 'add' ? 'required' : ''; ?>>
                             <div class="image-preview mt-2">
                                 <?php if ($action == 'edit' && !empty($instructor['instructor_image'])): ?>
                                     <img src="<?php echo htmlspecialchars($instructor['instructor_image']); ?>" class="preview-image mt-2" alt="Preview">
                                 <?php endif; ?>
                             </div>
+                            <div class="cropper-container mt-2" style="display: none;">
+                                <img id="cropperImage" src="" alt="Cropper Image">
+                            </div>
+                            <button type="button" id="cropButton" class="btn btn-primary mt-2" style="display: none;">Crop Image</button>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Desired Width (px)</label>
+                            <input type="number" name="width" class="form-control" placeholder="Enter desired width">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Desired Height (px)</label>
+                            <input type="number" name="height" class="form-control" placeholder="Enter desired height">
                         </div>
                         <button type="submit" class="btn btn-pink">Save Instructor</button>
                     </form>

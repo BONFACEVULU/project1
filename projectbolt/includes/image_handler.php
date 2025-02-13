@@ -1,93 +1,54 @@
 <?php
 class ImageHandler {
-    private $uploadDir;
-    private $allowedTypes = ['image/jpeg', 'image/jpg', 'image/png'];
-    private $maxSize = 5242880; // 5MB
-
-    public function __construct($uploadDir = '../uploads/') {
-        $this->uploadDir = $uploadDir;
-        $this->ensureUploadDirectory();
+    public function resizeImage($filePath, $width, $height) {
+        list($originalWidth, $originalHeight) = getimagesize($filePath);
+        $image = imagecreatefromjpeg($filePath);
+        $resizedImage = imagecreatetruecolor($width, $height);
+        
+        // Resize the image
+        imagecopyresampled($resizedImage, $image, 0, 0, 0, 0, $width, $height, $originalWidth, $originalHeight);
+        
+        // Save the resized image
+        imagejpeg($resizedImage, $filePath);
+        
+        // Free up memory
+        imagedestroy($image);
+        imagedestroy($resizedImage);
     }
 
-    private function ensureUploadDirectory() {
-        if (!is_dir($this->uploadDir)) {
-            mkdir($this->uploadDir, 0777, true);
-        }
-    }
+    private $uploadDir = '../uploads/';
 
     public function uploadImage($file) {
-        if (!isset($file['tmp_name']) || !is_uploaded_file($file['tmp_name'])) {
-            throw new Exception('No file uploaded');
+        $targetFile = $this->uploadDir . basename($file['name']);
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        // Check if image file is a actual image or fake image
+        $check = getimagesize($file['tmp_name']);
+        if ($check === false) {
+            throw new Exception("File is not an image.");
         }
 
-        // Verify file type
-        $finfo = finfo_open(FILEINFO_MIME_TYPE);
-        $mimeType = finfo_file($finfo, $file['tmp_name']);
-        finfo_close($finfo);
-
-        if (!in_array($mimeType, $this->allowedTypes)) {
-            throw new Exception('Invalid file type. Only JPG and PNG are allowed.');
+        // Check if file already exists
+        if (file_exists($targetFile)) {
+            throw new Exception("Sorry, file already exists.");
         }
 
         // Check file size
-        if ($file['size'] > $this->maxSize) {
-            throw new Exception('File too large. Maximum size is 5MB.');
+        if ($file['size'] > 500000) {
+            throw new Exception("Sorry, your file is too large.");
         }
 
-        // Generate unique filename
-        $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $newFilename = uniqid() . '_' . time() . '.' . $extension;
-        $targetPath = $this->uploadDir . $newFilename;
-
-        // Move and optimize the image
-        if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
-            throw new Exception('Failed to move uploaded file.');
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+            throw new Exception("Sorry, only JPG, JPEG, PNG & GIF files are allowed.");
         }
 
-        // Optimize the image
-        $this->optimizeImage($targetPath, $mimeType);
-
-        return str_replace('../', '', $targetPath); // Return relative path for database
-    }
-
-    private function optimizeImage($path, $mimeType) {
-        if ($mimeType === 'image/jpeg' || $mimeType === 'image/jpg') {
-            $image = imagecreatefromjpeg($path);
-        } else {
-            $image = imagecreatefrompng($path);
+        // Check if $uploadOk is set to 0 by an error
+        if (!move_uploaded_file($file['tmp_name'], $targetFile)) {
+            throw new Exception("Sorry, there was an error uploading your file.");
         }
 
-        // Resize if too large while maintaining aspect ratio
-        $maxWidth = 1200;
-        $maxHeight = 1200;
-        
-        $width = imagesx($image);
-        $height = imagesy($image);
-        
-        if ($width > $maxWidth || $height > $maxHeight) {
-            $ratio = min($maxWidth/$width, $maxHeight/$height);
-            $newWidth = round($width * $ratio);
-            $newHeight = round($height * $ratio);
-            
-            $newImage = imagecreatetruecolor($newWidth, $newHeight);
-            
-            if ($mimeType === 'image/png') {
-                imagealphablending($newImage, false);
-                imagesavealpha($newImage, true);
-            }
-            
-            imagecopyresampled($newImage, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-            $image = $newImage;
-        }
-
-        // Save with appropriate quality/compression
-        if ($mimeType === 'image/jpeg' || $mimeType === 'image/jpg') {
-            imagejpeg($image, $path, 85); // 85% quality
-        } else {
-            imagepng($image, $path, 8); // Compression level 8
-        }
-
-        imagedestroy($image);
+        return $targetFile;
     }
 }
 ?>
