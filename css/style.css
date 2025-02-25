@@ -1,0 +1,400 @@
+/* General Styles */
+:root {
+  --primary-color: #ff4081;
+  --secondary-color: #3f51b5;
+  --dark-color: #333;
+  --light-color: #f8f9fa;
+  --accent-color: #ff69b4;
+  --background-gradient: linear-gradient(to right, #15a2a7, #0fb5c4);
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light-color);
+}
+
+/* Navigation */
+.navbar-custom {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 0;
+}
+
+.navbar-custom .navbar-brand {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-custom .nav-link {
+  color: white !important;
+  margin: 0 0.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--background-gradient);
+}
+
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 186, 183, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 0;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.feature-box {
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Classes Section */
+.class-card {
+  transition: transform 0.3s ease;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: white;
+}
+
+/* Instructor Section */
+.instructor-section {
+  background-color: var(--light-color);
+}
+
+.instructor-title {
+  font-family: 'Arial', sans-serif;
+  font-size: 36px;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.instructor-card {
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instructor-image-container {
+  height: 300px;
+}
+
+.instructor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.instructor-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instructor-specialty {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+}
+
+.instructor-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.instructor-bio {
+  font-size: 16px;
+  color: #555555;
+}
+
+.instructor-classes-btn {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.instructor-classes-btn:hover {
+  background-color: #ff4081;
+}
+
+
+
+.class-card:hover {
+  transform: translateY(-5px);
+}
+
+.class-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+              url('../images/cta-bg.jpg') center/cover no-repeat;
+  padding: 5rem 0;
+  text-align: center;
+  color: white;
+}
+
+
+/* Footer */
+.footer {
+  background-color: var(--dark-color);
+  padding: 2rem 0;
+  color: white;
+  text-align: center;
+}
+
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons {
+  font-size: 1.5rem;
+}
+
+.social-icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.social-icons i:hover {
+  color: var(--primary-color);
+}
+
+/* Calendar Header */
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.calendar-header .badge {
+  background-color: var(--dark-color);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.calendar-header .badge.active {
+  background-color: var(--primary-color);
+}
+
+/* Pop-up Modal */
+.modal-content {
+  background-color: var(--light-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--light-color);
+}
+
+.contact-section h1 {
+    color: var(--dark-color);
+}
+
+.contact-section h3 {
+    color: var(--primary-color);
+}
+
+.contact-section p, .contact-section ul {
+    color: var(--dark-color);
+}
+
+.contact-section .social-icons a {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    transition: color 0.3s ease;
+}
+
+.contact-section .social-icons a:hover {
+    color: var(--primary-color);
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--light-color);
+}
+
+.gallery-section h2 {
+    color: var(--dark-color);
+}
+
+.gallery-section .img-fluid {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-section .img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Schedule Page Styles */
+.schedule-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 18px 20px 16px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.class-time {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.class-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.instructor-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.class-details {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.class-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.class-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.instructor-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.book-button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #333333;
+}
+
+.show-details {
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+}
+
+.show-details:hover {
+    text-decoration: underline;
+}
+
+.spots-left {
+    color: #FF4500;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .class-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .class-time {
+        text-align: left;
+    }
+}
