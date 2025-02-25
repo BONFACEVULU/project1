@@ -3,7 +3,11 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => 'f97a1d5c8faf711d813e12d49139eb29febdf8c4',
+=======
+        'reference' => '6f7c78509b037ef89c19ed09e08209b747e56d31',
+>>>>>>> origin/dance_final_system
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +17,11 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => 'f97a1d5c8faf711d813e12d49139eb29febdf8c4',
+=======
+            'reference' => '6f7c78509b037ef89c19ed09e08209b747e56d31',
+>>>>>>> origin/dance_final_system
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

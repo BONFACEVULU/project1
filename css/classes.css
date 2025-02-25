@@ -1,0 +1,355 @@
+/* Styles for classes.php */
+
+/* Grid layout for class cards */
+.class-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Class card styles */
+.class-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+.class-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.instructor-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary);
+}
+
+.price-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--secondary);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* User profile button styles */
+.user-profile-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: var(--secondary);
+    padding: 3px;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--secondary);
+    border-right: none;
+}
+
+.user-profile-button:hover {
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+/* User profile sidebar styles */
+.user-profile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 1050;
+}
+
+.user-profile-sidebar.open {
+    right: 0;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--dark);
+    color: white;
+}
+
+.profile-body {
+    padding: 15px;
+}
+
+.profile-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+}
+
+.profile-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 2px solid var(--secondary);
+    position: relative;
+}
+
+.proprofile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Custom Styles */
+:root {
+    --secondary: rgb(24, 115, 195);
+    --dark: #1a1a1a;
+}
+
+.calendar-header {
+    background: linear-gradient(to right, var(--dark), #333);
+}
+
+.calendar-day {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.calendar-day:hover {
+    background-color: var(--secondary);
+}
+
+.calendar-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.class-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+
+
+/* Show Details styles */
+.show-details {
+    color: var(--secondary);
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.show-details:hover {
+    color: #1a73e8;
+}
+
+.class-details-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 10px;
+}
+
+.class-details-content.show {
+    max-height: 500px;
+}
+
+.fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.show-details .fa-chevron-down {
+    transform: rotate(0deg);
+}
+
+.show-details .fa-chevron-up {
+    transform: rotate(180deg);
+}
+
+/* Class header styles */
+.class-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.class-time {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.class-time .duration {
+    margin-left: 5px;
+    color: #ddd;
+}
+
+/* Class main content styles */
+.class-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+
+
+.class-info {
+    flex: 1;
+}
+
+.class-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.class-level {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.class-instructor {
+    color: #444;
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.class-status {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Class footer styles */
+.class-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+
+
+.btn-book {
+    width: 100%;
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-book:hover {
+    background-color: #1a73e8;
+    transform: translateY(-2px);
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-secondary {
+    color: black;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.user-profile-button .profile-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary);
+    color: white;
+    margin-right: 5px;
+}

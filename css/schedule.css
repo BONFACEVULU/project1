@@ -1,0 +1,169 @@
+/* Styles for schedule.php */
+/* Updated Schedule Styles */
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Schedule Container Styles */
+.schedule-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 18px 20px 16px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Typography */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+/* List group item styles */
+.list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.list-group-item:hover {
+    transform: translateY(-5px);
+}
+
+.list-group-item .badge {
+    font-size: 1.25rem;
+    padding: 10px 15px;
+}
+
+.list-group-item h5 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.list-group-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.list-group-item .rounded-circle {
+    width: 60px;
+    height: 60px;
+}
+
+/* Class details */
+.class-time {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 8px;
+}
+
+.class-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.instructor-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.class-details {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+}
+
+/* Layout */
+.class-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.class-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.class-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+/* Elements */
+.instructor-image {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+.book-button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+    background-color: #333333;
+}
+
+.show-details {
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+}
+
+.show-details:hover {
+    text-decoration: underline;
+}
+
+.spots-left {
+    color: #FF4500;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .class-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .class-time {
+        text-align: left;
+    }
+}
