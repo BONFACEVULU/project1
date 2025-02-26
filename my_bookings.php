@@ -13,7 +13,7 @@ $db = $dbconnection->connect();
 $user_id = $_SESSION['user_id'];
 
 // Fetch user's booking history
-$query = "SELECT b.*, c.name AS class_name, b.booking_date 
+$query = "SELECT b.*, c.name AS class_name, b.booking_date, b.status 
           FROM bookings b
           JOIN classes c ON b.class_id = c.id
           WHERE b.user_id = :user_id";

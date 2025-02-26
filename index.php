@@ -32,9 +32,13 @@ require_once 'includes/header.php';
             z-index: 1;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 0; /* Adjusted padding to remove space */
+        }
+        .navbar {
+            margin-bottom: 0; /* Remove margin from navbar */
         }
     </style>
+
 </head>
 <body>
     <div class="video-background">

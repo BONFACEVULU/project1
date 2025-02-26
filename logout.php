@@ -1,9 +1,8 @@
 <?php
 session_start();
-<<<<<<< HEAD
+
 session_destroy();
 header("Location: index.php");
-=======
 
 // Clear all session variables
 $_SESSION = array();
@@ -17,7 +16,5 @@ if (isset($_COOKIE[session_name()])) {
 session_destroy();
 
 header("Location: index.php");
-
->>>>>>> origin/dance_final_system
 exit();
 ?>

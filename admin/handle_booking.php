@@ -1,19 +1,12 @@
 <?php
-session_start();
 require_once '../config/dbconnection.php';
-
-// Check if user is admin
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    header("Location: ../login.php");
-    exit();
-}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_id = $_POST['booking_id'];
     $action = $_POST['action']; // 'confirm' or 'reject'
 
     if (!in_array($action, ['confirm', 'reject'])) {
-        header("Location: pending_bookings.php?error=Invalid action.");
+        header("Location: manage_bookings.php?error=Invalid action.");
         exit();
     }
 
@@ -45,18 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $subject = "Booking " . ucfirst($status) . " for " . $booking['class_name'];
             $message = "Dear " . $booking['user_name'] . ",\n\nYour booking for " . $booking['class_name'] . " has been " . $status . ".\n\n";
             $message .= ($status === 'confirmed') ? "Thank you!" : "Please contact us if you have any questions.";
+            $message .= "\n\nFor any inquiries, please contact us at 0701284812.";
             $headers = "From: no-reply@dancestudio.com";
 
             if (mail($to, $subject, $message, $headers)) {
-                header("Location: pending_bookings.php?success=Booking $status and email sent.");
+                header("Location: manage_bookings.php?success=Booking $status and email sent.");
             } else {
-                header("Location: pending_bookings.php?error=Booking $status but email failed.");
+                header("Location: manage_bookings.php?error=Booking $status but email failed.");
             }
         } else {
-            header("Location: pending_bookings.php?error=Booking not found.");
+            header("Location: manage_bookings.php?error=Booking not found.");
         }
     } else {
-        header("Location: pending_bookings.php?error=Failed to $action booking.");
+        header("Location: manage_bookings.php?error=Failed to $action booking.");
     }
     exit();
 }

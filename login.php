@@ -2,12 +2,24 @@
 session_start();
 require_once 'config/dbconnection.php';
 
+// Hardcoded admin credentials
+$admin_username = 'admin@gmail.com'; // Replace with your admin username
+$admin_password = 'amadmin'; // Replace with your admin password
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dbconnection = new dbconnection();
     $db = $dbconnection->connect();
 
     $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
     $password = filter_var($_POST['password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+
+    // Check if admin credentials
+    if ($email === $admin_username && $password === $admin_password) {
+        $_SESSION['user_id'] = $admin_username; // Set session for admin
+        $_SESSION['user_role'] = 'admin'; // Set role
+        header("Location: admin/admin.php"); // Redirect to admin dashboard
+        exit();
+    }
 
     // Fetch the user data from the database
     $query = "SELECT id, password FROM users WHERE email = :email";

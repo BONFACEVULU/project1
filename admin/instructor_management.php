@@ -158,9 +158,11 @@ if ($action == 'edit') {
             <?php foreach ($instructors as $instructor): ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm hover-effect">
-                        <img src="<?php echo htmlspecialchars($instructor['instructor_image'] ?? 'uploads/default_instructor_image.jpg'); ?>" 
-                             class="card-img-top instructor-image" 
-                             alt="<?php echo htmlspecialchars($instructor['name']); ?>">
+    <img src="<?php echo htmlspecialchars($instructor['instructor_image'] ?? 'uploads/default_instructor_image.jpg'); ?>" 
+         class="card-img-top instructor-image" 
+         alt="<?php echo htmlspecialchars($instructor['name']); ?>"
+         style="object-fit: contain; max-height: 300px;">
+
                         <div class="card-body">
                             <h5 class="card-title"><?php echo htmlspecialchars($instructor['name']); ?></h5>
                             <p class="card-text"><?php echo htmlspecialchars($instructor['bio']); ?></p>

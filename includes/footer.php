@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-    </div>
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/script.js"></script>
-</body>
-</html>
-=======
 <footer class="footer bg-dark text-white py-5">
     <div class="container">
         <div class="row">
@@ -54,4 +46,3 @@
 
 </body>
 </html>
->>>>>>> origin/dance_final_system
