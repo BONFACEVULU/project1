@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    font-size: 36px;
+    color: #343a40;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.instructor-card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.instructor-card:hover {
+    transform: translateY(-10px);
+}
+
+.instructor-image-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.instructor-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures the entire image fits without cropping */
+    max-height: 300px; /* Optional: limit max height to keep images consistent */
+}
+
+.instructor-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.instructor-info h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.instructor-info p {
+    font-size: 1rem;
+    color: #777;
+}
+
+.instructor-specialty {
+    background-color: #ff69b4;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
