@@ -190,3 +190,5 @@ if ($action == 'edit') {
 <script src="/projectbolt/assets/js/admin.js"></script>
 </body>
 </html>
+/ /   T h i s   f i l e   m a n a g e s   t h e   i n s t r u c t o r   d a t a   a n d   o p e r a t i o n s .  
+ 
