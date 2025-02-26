@@ -165,4 +165,5 @@ $result = $db->query($query);
 
 <?php require_once '../includes/footer.php'; ?>
 / /   T h i s   f i l e   m a n a g e s   t h e   b o o k i n g s   m a d e   b y   u s e r s .  
+ / /   T h i s   f i l e   m a n a g e s   t h e   b o o k i n g s   m a d e   b y   u s e r s .  
  
